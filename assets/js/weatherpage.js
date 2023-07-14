@@ -1,4 +1,4 @@
-var searchFormEl = document.querySelector('#user-form');
+var searchFormEl = document.querySelector('#submit');
 var cityInputEl = document.querySelector('#user-input');
 
 // var weatherContainEl = document.querySelector('#weather-display');
@@ -28,7 +28,25 @@ var checkWeather = function(event) {
 
 
                 document.querySelector('.city').innerHTML = data.name;
-                document.querySelector('.temp').innerHTML = data.main.temp;
+                document.querySelector('.currentTemp').innerHTML = data.main.temp;
+            });
+        }
+     });
+
+
+
+
+     var apiURL2 = "api.openweathermap.org/data/2.5/forecast?units=imperial&q="+ cityName + "&appid=" + apiKey;
+
+
+     fetch(apiURL2 + `&appid=${apiKey}`)
+     .then(function (response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+
+
+                // document.querySelector('.5dayTemp').innerHTML = data.main.temp;
             });
         }
      });
@@ -37,7 +55,7 @@ var checkWeather = function(event) {
 
 
 
-searchFormEl.addEventListener('submit', checkWeather());
+searchFormEl.addEventListener('click', checkWeather);
 
 
 
