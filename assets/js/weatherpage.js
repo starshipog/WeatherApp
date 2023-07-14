@@ -4,24 +4,25 @@ var cityInputEl = document.querySelector('#user-input');
 // var weatherContainEl = document.querySelector('#weather-display');
 
 
+var cityName = cityInputEl.value.trim();
 
 
 var apiKey = "510113c655e48e0d72d50c9e90962f9d";
 
 // var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
 
-var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=dallas";
+var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
 
-var checkWeather = function(city) {
-    fetch(apiURL + city + `&appid=${apiKey}`)
+var checkWeather = function() {
+    fetch(apiURL + `&appid=${apiKey}`)
      .then(function (response) {
         if (response.ok) {
             response.json().then(function(data) {
                 console.log(data);
 
 
-                var cityName = document.querySelector('#city').innerHTML = data.name;
-                var temp = document.querySelector('#temp').innerHTML = data.main.temp;
+                 document.querySelector('.city').innerHTML = data.name;
+                document.querySelector('.temp').innerHTML = data.main.temp;
             });
         }
      });
@@ -30,7 +31,7 @@ var checkWeather = function(city) {
 
 
 
-searchFormEl.addEventListener('click', checkWeather(city));
+searchFormEl.addEventListener('click', checkWeather());
 
 
 
