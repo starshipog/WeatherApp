@@ -4,16 +4,22 @@ var cityInputEl = document.querySelector('#user-input');
 // var weatherContainEl = document.querySelector('#weather-display');
 
 
-var cityName = cityInputEl.value.trim();
 
 
-var apiKey = "510113c655e48e0d72d50c9e90962f9d";
+var checkWeather = function(event) {
+    event.preventDefault()
 
-// var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
+    
+    var cityName = cityInputEl.value.trim();
 
-var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
 
-var checkWeather = function() {
+    var apiKey = "510113c655e48e0d72d50c9e90962f9d";
+
+    // var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
+
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
+
+
     fetch(apiURL + `&appid=${apiKey}`)
      .then(function (response) {
         if (response.ok) {
@@ -21,7 +27,7 @@ var checkWeather = function() {
                 console.log(data);
 
 
-                 document.querySelector('.city').innerHTML = data.name;
+                document.querySelector('.city').innerHTML = data.name;
                 document.querySelector('.temp').innerHTML = data.main.temp;
             });
         }
@@ -31,7 +37,7 @@ var checkWeather = function() {
 
 
 
-searchFormEl.addEventListener('click', checkWeather());
+searchFormEl.addEventListener('submit', checkWeather());
 
 
 
