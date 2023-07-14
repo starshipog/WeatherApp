@@ -36,7 +36,10 @@ var checkWeather = function(event) {
 
 
 
-     var apiURL2 = "api.openweathermap.org/data/2.5/forecast?units=imperial&q="+ cityName + "&appid=" + apiKey;
+     var apiURL2 = "api.openweathermap.org/data/2.5/forecast?lat=" + data.coord[1] + "&lon=" + data.coord[0] + "&appid=" + apiKey;
+
+
+    // var apiURL2 = "api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=" + apiKey;
 
 
      fetch(apiURL2 + `&appid=${apiKey}`)
@@ -46,7 +49,7 @@ var checkWeather = function(event) {
                 console.log(data);
 
 
-                // document.querySelector('.5dayTemp').innerHTML = data.main.temp;
+                // document.querySelector('.currentTemp').innerHTML = data.main.temp;
             });
         }
      });
