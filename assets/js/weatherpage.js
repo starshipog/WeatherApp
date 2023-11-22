@@ -5,7 +5,6 @@ var cityInputEl = document.querySelector('#user-input');
 
 
 
-
 var checkWeather = function(event) {
     event.preventDefault()
 
@@ -17,7 +16,15 @@ var checkWeather = function(event) {
 
     // var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
 
+
+
+
+// WHEN I search for a city
+// THEN I am presented with current and future conditions for that city and that city is added to the search history
+
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
+
+    
 
 
     fetch(apiURL + `&appid=${apiKey}`)
