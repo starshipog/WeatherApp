@@ -1,5 +1,5 @@
 var searchFormEl = document.querySelector('#submit');
-var cityInputEl = document.querySelector('#user-input');
+var cityInputEl = document.querySelector('#user-input-city');
 
 // var weatherContainEl = document.querySelector('#weather-display');
 
@@ -36,9 +36,38 @@ var checkWeather = function(event) {
 
                 document.querySelector('.city').innerHTML = data.name;
                 document.querySelector('.currentTemp').innerHTML = data.main.temp;
+                document.querySelector('.currentWind').innerHTML = data.wind.speed;
+                document.querySelector('.currentHumidity').innerHTML = data.main.humidity;
             });
         }
      });
+
+
+
+
+
+     
+    var apiURL2 = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
+    // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&appid={API key}
+
+    
+
+
+    fetch(apiURL2 + `&appid=${apiKey}`)
+     .then(function (response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+
+
+                document.querySelector('.city').innerHTML = data.name;
+                document.querySelector('.5dayTemp').innerHTML = data.main.temp;
+                document.querySelector('.5dayWind').innerHTML = data.wind.speed;
+                document.querySelector('.5dayHumidity').innerHTML = data.main.humidity;
+            });
+        }
+     });
+
 
 
 
