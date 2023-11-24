@@ -48,10 +48,10 @@ var checkWeather = function(event) {
 
 
      
-    // var apiURL2 = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
+    var apiURL2 = "https://api.openweathermap.org/data/2.5/forecast?units=imperial&q="+ cityName + "&appid=" + apiKey;
 
     
-    var apiURL2 = "http://api.openweathermap.org/geo/1.0/direct?q=" + data.cityName.coord + "&appid=" , apiKey;
+    // var apiURL2 = "http://api.openweathermap.org/geo/1.0/direct?q=" + data.cityName.coord + "&appid=" , apiKey;
 
     // var apiURL2 = "http://api.openweathermap.org/geo/1.0/weather?units=imperial&q=" + cityName + "&appid=" apiKey;
     // 
@@ -67,9 +67,25 @@ var checkWeather = function(event) {
                 console.log(data);
 
 
-                document.querySelector('.5dayTemp').innerHTML = data.main.temp;
-                document.querySelector('.5dayWind').innerHTML = data.wind.speed;
-                document.querySelector('.5dayHumidity').innerHTML = data.main.humidity;
+                document.querySelector('.5dayTemp1').innerHTML = data.list[0].main.temp;
+                document.querySelector('.5dayWind1').innerHTML = data.list[0].wind.speed;
+                document.querySelector('.5dayHumidity1').innerHTML = data.list[0].main.humidity;
+
+                document.querySelector('.5dayTemp2').innerHTML = data.list[1].main.temp;
+                document.querySelector('.5dayWind2').innerHTML = data.list[1].wind.speed;
+                document.querySelector('.5dayHumidity2').innerHTML = data.list[1].main.humidity;
+
+                document.querySelector('.5dayTemp3').innerHTML = data.list[2].main.temp;
+                document.querySelector('.5dayWind3').innerHTML = data.list[2].wind.speed;
+                document.querySelector('.5dayHumidity3').innerHTML = data.list[2].main.humidity;
+
+                document.querySelector('.5dayTemp4').innerHTML = data.list[3].main.temp;
+                document.querySelector('.5dayWind4').innerHTML = data.list[3].wind.speed;
+                document.querySelector('.5dayHumidity4').innerHTML = data.list[3].main.humidity;
+
+                document.querySelector('.5dayTemp5').innerHTML = data.list[4].main.temp;
+                document.querySelector('.5dayWind5').innerHTML = data.list[4].wind.speed;
+                document.querySelector('.5dayHumidity5').innerHTML = data.list[4].main.humidity;
             });
         }
      });
@@ -105,6 +121,15 @@ searchFormEl.addEventListener('click', checkWeather);
 if(checkWeather == true) {
     localStorage.setItem("user-input-city" , city)
 };
+
+
+
+
+
+var today = dayjs();
+$('#currentDay').text(today.format('dddd, MMMM D, YYYY h:mm A'));
+
+
 
 
 // var checkWeather = function(event) {
