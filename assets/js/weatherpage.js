@@ -3,6 +3,7 @@ var cityInputEl = document.querySelector('#user-input-city');
 
 // var weatherContainEl = document.querySelector('#weather-display');
 
+var city = localStorage.getItem("user-input-city")
 
 
 var checkWeather = function(event) {
@@ -47,8 +48,14 @@ var checkWeather = function(event) {
 
 
      
-    var apiURL2 = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
-    // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&appid={API key}
+    // var apiURL2 = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q="+ cityName + "&appid=" + apiKey;
+
+    
+    var apiURL2 = "http://api.openweathermap.org/geo/1.0/direct?q=" + data.cityName.coord + "&appid=" , apiKey;
+
+    // var apiURL2 = "http://api.openweathermap.org/geo/1.0/weather?units=imperial&q=" + cityName + "&appid=" apiKey;
+    // 
+    // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
 
     
 
@@ -60,7 +67,6 @@ var checkWeather = function(event) {
                 console.log(data);
 
 
-                document.querySelector('.city').innerHTML = data.name;
                 document.querySelector('.5dayTemp').innerHTML = data.main.temp;
                 document.querySelector('.5dayWind').innerHTML = data.wind.speed;
                 document.querySelector('.5dayHumidity').innerHTML = data.main.humidity;
@@ -96,7 +102,9 @@ var checkWeather = function(event) {
 
 searchFormEl.addEventListener('click', checkWeather);
 
-
+if(checkWeather == true) {
+    localStorage.setItem("user-input-city" , city)
+};
 
 
 // var checkWeather = function(event) {
