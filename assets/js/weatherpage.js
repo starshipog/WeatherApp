@@ -1,3 +1,5 @@
+import dayjs from 'dayjs'
+
 var searchFormEl = document.querySelector('#submit');
 var cityInputEl = document.querySelector('#user-input-city');
 
@@ -67,25 +69,25 @@ var checkWeather = function(event) {
                 console.log(data);
 
 
-                document.querySelector('.5dayTemp1').innerHTML = data.list[0].main.temp;
-                document.querySelector('.5dayWind1').innerHTML = data.list[0].wind.speed;
-                document.querySelector('.5dayHumidity1').innerHTML = data.list[0].main.humidity;
+                document.querySelector('.foreTempOne').innerHTML = data.list[0].main.temp;
+                document.querySelector('.foreWindOne').innerHTML = data.list[0].wind.speed;
+                document.querySelector('.foreHumidOne').innerHTML = data.list[0].main.humidity;
 
-                document.querySelector('.5dayTemp2').innerHTML = data.list[1].main.temp;
-                document.querySelector('.5dayWind2').innerHTML = data.list[1].wind.speed;
-                document.querySelector('.5dayHumidity2').innerHTML = data.list[1].main.humidity;
+                document.querySelector('.foreTempTwo').innerHTML = data.list[1].main.temp;
+                document.querySelector('.foreWindTwo').innerHTML = data.list[1].wind.speed;
+                document.querySelector('.foreHumidTwo').innerHTML = data.list[1].main.humidity;
 
-                document.querySelector('.5dayTemp3').innerHTML = data.list[2].main.temp;
-                document.querySelector('.5dayWind3').innerHTML = data.list[2].wind.speed;
-                document.querySelector('.5dayHumidity3').innerHTML = data.list[2].main.humidity;
+                document.querySelector('.foreTempThree').innerHTML = data.list[2].main.temp;
+                document.querySelector('.foreWindThree').innerHTML = data.list[2].wind.speed;
+                document.querySelector('.foreHumidThree').innerHTML = data.list[2].main.humidity;
 
-                document.querySelector('.5dayTemp4').innerHTML = data.list[3].main.temp;
-                document.querySelector('.5dayWind4').innerHTML = data.list[3].wind.speed;
-                document.querySelector('.5dayHumidity4').innerHTML = data.list[3].main.humidity;
+                document.querySelector('.foreTempFour').innerHTML = data.list[3].main.temp;
+                document.querySelector('.foreWindFour').innerHTML = data.list[3].wind.speed;
+                document.querySelector('.foreHumidFour').innerHTML = data.list[3].main.humidity;
 
-                document.querySelector('.5dayTemp5').innerHTML = data.list[4].main.temp;
-                document.querySelector('.5dayWind5').innerHTML = data.list[4].wind.speed;
-                document.querySelector('.5dayHumidity5').innerHTML = data.list[4].main.humidity;
+                document.querySelector('.foreTempFive').innerHTML = data.list[4].main.temp;
+                document.querySelector('.foreWindFive').innerHTML = data.list[4].wind.speed;
+                document.querySelector('.foreHumidFive').innerHTML = data.list[4].main.humidity;
             });
         }
      });
