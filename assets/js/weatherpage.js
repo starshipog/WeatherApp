@@ -1,4 +1,6 @@
-import dayjs from 'dayjs'
+dayjs.extend(window.dayjs_plugin_utc);
+dayjs.extend(window.dayjs_plugin_timezone);
+
 
 var searchFormEl = document.querySelector('#submit');
 var cityInputEl = document.querySelector('#user-input-city');
