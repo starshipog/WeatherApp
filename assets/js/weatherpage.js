@@ -1,3 +1,6 @@
+// import dayjs from "dayjs";
+
+
 dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
 
@@ -129,7 +132,7 @@ if(checkWeather == true) {
 
 
 
-
+// var today = require("dayjs") for import
 var today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D, YYYY h:mm A'));
 
