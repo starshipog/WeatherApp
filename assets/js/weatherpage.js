@@ -43,9 +43,9 @@ var checkWeather = function(event) {
 
 
                 document.querySelector('.city').innerHTML = data.name;
-                document.querySelector('.currentTemp').innerHTML = data.main.temp;
-                document.querySelector('.currentWind').innerHTML = data.wind.speed;
-                document.querySelector('.currentHumidity').innerHTML = data.main.humidity;
+                document.querySelector('.currentTemp').innerHTML = "Temp: " + data.main.temp + " F";
+                document.querySelector('.currentWind').innerHTML = "Wind: " + data.wind.speed + " MPH";
+                document.querySelector('.currentHumidity').innerHTML = "Humidity: " + data.main.humidity + " %";
             });
         }
      });
@@ -74,25 +74,25 @@ var checkWeather = function(event) {
                 console.log(data);
 
 
-                document.querySelector('.foreTempOne').innerHTML = data.list[0].main.temp;
-                document.querySelector('.foreWindOne').innerHTML = data.list[0].wind.speed;
-                document.querySelector('.foreHumidOne').innerHTML = data.list[0].main.humidity;
+                document.querySelector('.foreTempOne').innerHTML = "Temp: " + data.list[0].main.temp + " F";
+                document.querySelector('.foreWindOne').innerHTML = "Wind: " + data.list[0].wind.speed + " MPH";
+                document.querySelector('.foreHumidOne').innerHTML = "Humidity: " + data.list[0].main.humidity + " %";
 
-                document.querySelector('.foreTempTwo').innerHTML = data.list[1].main.temp;
-                document.querySelector('.foreWindTwo').innerHTML = data.list[1].wind.speed;
-                document.querySelector('.foreHumidTwo').innerHTML = data.list[1].main.humidity;
+                document.querySelector('.foreTempTwo').innerHTML = "Temp: " + data.list[1].main.temp + " F";
+                document.querySelector('.foreWindTwo').innerHTML = "Wind: " + data.list[1].wind.speed + " MPH";
+                document.querySelector('.foreHumidTwo').innerHTML = "Humidity: " + data.list[1].main.humidity + " %";
 
-                document.querySelector('.foreTempThree').innerHTML = data.list[2].main.temp;
-                document.querySelector('.foreWindThree').innerHTML = data.list[2].wind.speed;
-                document.querySelector('.foreHumidThree').innerHTML = data.list[2].main.humidity;
+                document.querySelector('.foreTempThree').innerHTML = "Temp: " + data.list[2].main.temp + " F";
+                document.querySelector('.foreWindThree').innerHTML = "Wind: " + data.list[2].wind.speed + " MPH";
+                document.querySelector('.foreHumidThree').innerHTML = "Humidity: " + data.list[2].main.humidity + " %";
 
-                document.querySelector('.foreTempFour').innerHTML = data.list[3].main.temp;
-                document.querySelector('.foreWindFour').innerHTML = data.list[3].wind.speed;
-                document.querySelector('.foreHumidFour').innerHTML = data.list[3].main.humidity;
+                document.querySelector('.foreTempFour').innerHTML = "Temp: " + data.list[3].main.temp + " F";
+                document.querySelector('.foreWindFour').innerHTML = "Wind: " + data.list[3].wind.speed + " MPH";
+                document.querySelector('.foreHumidFour').innerHTML = "Humidity: " + data.list[3].main.humidity + " %";
 
-                document.querySelector('.foreTempFive').innerHTML = data.list[4].main.temp;
-                document.querySelector('.foreWindFive').innerHTML = data.list[4].wind.speed;
-                document.querySelector('.foreHumidFive').innerHTML = data.list[4].main.humidity;
+                document.querySelector('.foreTempFive').innerHTML = "Temp: " + data.list[4].main.temp + " F";
+                document.querySelector('.foreWindFive').innerHTML = "Wind: " + data.list[4].wind.speed + " MPH";
+                document.querySelector('.foreHumidFive').innerHTML = "Humidity: " + data.list[4].main.humidity + " %";
             });
         }
      });
