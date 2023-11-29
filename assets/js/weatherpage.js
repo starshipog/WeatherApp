@@ -133,7 +133,7 @@ if(checkWeather == true) {
 
 
 // var today = require("dayjs") for import
-var today = dayjs();
+const today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D, YYYY h:mm A'));
 
 
